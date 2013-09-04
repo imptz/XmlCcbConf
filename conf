@@ -1,0 +1,21 @@
+<ccbConf>
+  <com_port name="com3"/>
+  <config version="1">
+   <const text="Константы" sizeOfByte="28">
+    <maxPR                        value="2"       sizeOfByte="1" text="Максимальное число ПР участвующих в тушении очага"/>
+    <timeOutBeforeStart           value="0"       sizeOfByte="1" text="Задержка перед стартом (сек)"/>
+    <timeOutBeforeFinish          value="0"       sizeOfByte="2" text="Задержка перед завершением тушения (мин)"/>
+    <numberFireToAnalize          value="0"       sizeOfByte="1" text="Число анализируемых источников ИК излучения"/>
+    <minimumDistanceForCompactJet value="15"      sizeOfByte="1" text="Минимальная дистанция для компактной струи (м)"/>
+    <permissionTesting            value="0"       sizeOfByte="1" text="Разрешение тестирования {0, 1}"/>
+    <testingHour                  value="0"       sizeOfByte="1" text="Время начала тестирования: часы"/>
+    <testingMinute                value="0"       sizeOfByte="1" text="Время начала тестирования: минуты"/>
+    <permissionTestingInfo        value="0"       sizeOfByte="1" text="Разрешение передачи информации о результатах тестирования {0, 1}"/>
+    <timeControlUserAction        value="0"       sizeOfByte="2" text=""/>
+    <protectedZoneX               value="10000"   sizeOfByte="2" text=""/>
+    <protectedZoneY               value="10000"   sizeOfByte="2" text=""/>
+    <protectedZoneZ               value="3000"    sizeOfByte="2" text=""/>
+    <tv                           value="0"       sizeOfByte="1" text=""/>  
+   </const> 
+  </config>
+</ccbConf>
