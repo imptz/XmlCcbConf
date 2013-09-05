@@ -7,6 +7,7 @@
 #include "cmd.h"
 #include "config.h"
 #include "xmlExceptions.h"
+#include "serial.h"
 
 using namespace std;
 
@@ -27,22 +28,35 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 	
-	XmlElement* xmlElement = Config::getElement("conf");
-	if (xmlElement == nullptr){
+	XmlElement* configElement = Config::getElement("config");
+	if (configElement == nullptr){
+		std::cout << "kornevoy element 'config' ne nayden" << std::endl;
+		return 0;
+	}
+
+	if (Cmd::isParameterExists(Cmd::CMD_PRINT_CONFIG)){
+		configElement->print();
+		return 1;
+	}
+
+	XmlElement* comPortElement = Config::getElement("com_port");
+	if (comPortElement == nullptr){
 		std::cout << "imya com porta ne ukazano" << std::endl;
 		return 0;
 	}
 
-	xmlElement->print();
-
-
 	std::string comPortName;
-	if (xmlElement->isAttributeExists("name"))
-		comPortName = xmlElement->getAttributeValue("name");
+	if (comPortElement->isAttributeExists("name"))
+		comPortName = comPortElement->getAttributeValue("name");
 	else{
 		std::cout << "imya com porta ne ukazano" << std::endl;
 		return 0;
 	}
 	
-	return true;
+	if (!Serial::serialConnect(comPortName.c_str(), atoi(configElement->getAttributeValue("year").c_str()), atoi(configElement->getAttributeValue("version").c_str()))){
+		std::cout << "Error: soedinenie ne ustanovleno" << std::endl;
+		return 0;
+	}
+
+	return 1;
 }

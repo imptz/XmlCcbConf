@@ -45,13 +45,13 @@ public:
 
 	static const string CMD_NAME;
 	static const string CMD_CONFIG_FILE;
-	static const string CMD_LAUNCH_DISPATCHER;
+	static const string CMD_PRINT_CONFIG;
 };
 
 map<string, string> Cmd::parameters;
 const string Cmd::CMD_NAME = "name";
 const string Cmd::CMD_CONFIG_FILE = "config_file";
-const string Cmd::CMD_LAUNCH_DISPATCHER = "launch_dispatcher";
+const string Cmd::CMD_PRINT_CONFIG = "print";
 
 #endif
 
