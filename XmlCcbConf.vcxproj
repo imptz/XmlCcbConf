@@ -79,6 +79,8 @@
   <ItemGroup>
     <ClInclude Include="cmd.h" />
     <ClInclude Include="config.h" />
+    <ClInclude Include="crc32.h" />
+    <ClInclude Include="data.h" />
     <ClInclude Include="serial.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="stdafx.h" />
@@ -88,6 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="config.cpp" />
+    <ClCompile Include="crc32.cpp" />
     <ClCompile Include="serial.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="xml.cpp" />
