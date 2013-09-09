@@ -1,181 +1,183 @@
-<com_port name = "com3"/>
-<config year = "2013" version = "1">
- <const id = "1" sizeOfByte = "28" text = "Константы">
-  <maxPR                        value = "2"       sizeOfByte = "1"/><!-- text="Максимальное число ПР участвующих в тушении очага"/>-->
-  <timeOutBeforeStart           value = "0"       sizeOfByte = "1"/><!-- text="Задержка перед стартом (сек)"/>-->
-  <timeOutBeforeFinish          value = "0"       sizeOfByte = "1"/><!-- text="Задержка перед завершением тушения (мин)"/>-->
-  <numberFireToAnalize          value = "0"       sizeOfByte = "1"/><!-- text="Число анализируемых источников ИК излучения"/>-->
-  <minimumDistanceForCompactJet value = "15"      sizeOfByte = "1"/><!-- text="Минимальная дистанция для компактной струи (м)"/>-->
-  <permissionTesting            value = "0"       sizeOfByte = "1"/><!-- text="Разрешение тестирования {0, 1}"/>-->
-  <testingHour                  value = "0"       sizeOfByte = "1"/><!-- text="Время начала тестирования: часы"/>-->
-  <testingMinute                value = "0"       sizeOfByte = "1"/><!-- text="Время начала тестирования: минуты"/>-->
-  <permissionTestingInfo        value = "0"       sizeOfByte = "1"/><!-- text="Разрешение передачи информации о результатах тестирования {0, 1}"/>-->
-  <timeControlUserAction        value = "0"       sizeOfByte = "1"/><!-- text="Время ожидания действия оператора перед стартом поиска или орошения (сек)"/>-->
-  <protectedZoneX               value = "10000"   sizeOfByte = "2"/><!-- text="Размеры защищаемой зоны по оси X (см)"/>-->
-  <protectedZoneY               value = "5000"    sizeOfByte = "2"/><!-- text="Размеры защищаемой зоны по оси Y (см)"/>-->
-  <protectedZoneZ               value = "3000"    sizeOfByte = "2"/><!-- text="Размеры защищаемой зоны по оси Z (см)"/>-->
-  <tvAdapter                    value = "0"       sizeOfByte = "2"/><!-- text="Наличие адаптера УСО - 'телевизионная система мониторинга'"/>-->
-  <pcAdapter                    value = "0"       sizeOfByte = "2"/><!-- text="Наличие адаптера УСО - 'PC'"/>-->
-  <topField                     value = "5"       sizeOfByte = "1"/><!-- text="Верхнее поле при тушении очага (град)"/>-->
-  <bottomField                  value = "6"       sizeOfByte = "1"/><!-- text="Нижнее поле при тушении очага (град)"/>-->
-  <leftField                    value = "7"       sizeOfByte = "1"/><!-- text="Левое поле при тушении очага (град)"/>-->
-  <rightField                   value = "8"       sizeOfByte = "1"/><!-- text="Правое поле при тушении очага (град)"/>-->
-  <timeReturnFromRemoteMode     value = "1"       sizeOfByte = "1"/><!-- text="Время возврата из дистанционного режима (мин)"/>-->
-  <permissionRemoteWithSearch   value = "1"       sizeOfByte = "1"/><!-- text="Разрешение на переход в дистанционный режим при поиске очага {0, 1}"/>-->
- </const>
+<com_port name="com3"/>
+<config year="2013" version="1">
+ <constsets id="1" text="Константы">
+  <const sizeOfByte="28">
+   <maxPR                        value="2"       sizeOfByte="1"/><!-- text="Максимальное число ПР участвующих в тушении очага"/>-->
+   <timeOutBeforeStart           value="0"       sizeOfByte="1"/><!-- text="Задержка перед стартом (сек)"/>-->
+   <timeOutBeforeFinish          value="0"       sizeOfByte="1"/><!-- text="Задержка перед завершением тушения (мин)"/>-->
+   <numberFireToAnalize          value="0"       sizeOfByte="1"/><!-- text="Число анализируемых источников ИК излучения"/>-->
+   <minimumDistanceForCompactJet value="15"      sizeOfByte="1"/><!-- text="Минимальная дистанция для компактной струи (м)"/>-->
+   <permissionTesting            value="0"       sizeOfByte="1"/><!-- text="Разрешение тестирования {0, 1}"/>-->
+   <testingHour                  value="0"       sizeOfByte="1"/><!-- text="Время начала тестирования: часы"/>-->
+   <testingMinute                value="0"       sizeOfByte="1"/><!-- text="Время начала тестирования: минуты"/>-->
+   <permissionTestingInfo        value="0"       sizeOfByte="1"/><!-- text="Разрешение передачи информации о результатах тестирования {0, 1}"/>-->
+   <timeControlUserAction        value="0"       sizeOfByte="1"/><!-- text="Время ожидания действия оператора перед стартом поиска или орошения (сек)"/>-->
+   <protectedZoneX               value="10000"   sizeOfByte="2"/><!-- text="Размеры защищаемой зоны по оси X (см)"/>-->
+   <protectedZoneY               value="5000"    sizeOfByte="2"/><!-- text="Размеры защищаемой зоны по оси Y (см)"/>-->
+   <protectedZoneZ               value="3000"    sizeOfByte="2"/><!-- text="Размеры защищаемой зоны по оси Z (см)"/>-->
+   <tvAdapter                    value="0"       sizeOfByte="2"/><!-- text="Наличие адаптера УСО - 'телевизионная система мониторинга'"/>-->
+   <pcAdapter                    value="0"       sizeOfByte="2"/><!-- text="Наличие адаптера УСО - 'PC'"/>-->
+   <topField                     value="5"       sizeOfByte="1"/><!-- text="Верхнее поле при тушении очага (град)"/>-->
+   <bottomField                  value="6"       sizeOfByte="1"/><!-- text="Нижнее поле при тушении очага (град)"/>-->
+   <leftField                    value="7"       sizeOfByte="1"/><!-- text="Левое поле при тушении очага (град)"/>-->
+   <rightField                   value="8"       sizeOfByte="1"/><!-- text="Правое поле при тушении очага (град)"/>-->
+   <timeReturnFromRemoteMode     value="1"       sizeOfByte="1"/><!-- text="Время возврата из дистанционного режима (мин)"/>-->
+   <permissionRemoteWithSearch   value="1"       sizeOfByte="1"/><!-- text="Разрешение на переход в дистанционный режим при поиске очага {0, 1}"/>-->
+  </const>
+ </constsets>
  
- <pr_position id = "2" text = "Положение и ориентация ПР">
-  <pr sizeOfByte = "18">
-   <number                    value = "1"       sizeOfByte = "1"/>
-   <address                   value = "10"      sizeOfByte = "1"/>
-   <x                         value = "100"     sizeOfByte = "2"/>
-   <y                         value = "101"     sizeOfByte = "2"/>
-   <z                         value = "102"     sizeOfByte = "2"/>
-   <orientation_gor           value = "80"      sizeOfByte = "2"/>
-   <orientation_ver           value = "0"       sizeOfByte = "1"/>
-   <numberInMagistral         value = "1"       sizeOfByte = "1"/>
-   <correctionX               value = "0"       sizeOfByte = "2"/>
-   <correctionY               value = "1"       sizeOfByte = "2"/>
-   <correctionZ               value = "2"       sizeOfByte = "2"/>
+ <pr_position id="2" text="Положение и ориентация ПР">
+  <pr sizeOfByte="18">
+   <number                    value="1"       sizeOfByte="1"/>
+   <address                   value="10"      sizeOfByte="1"/>
+   <x                         value="100"     sizeOfByte="2"/>
+   <y                         value="101"     sizeOfByte="2"/>
+   <z                         value="102"     sizeOfByte="2"/>
+   <orientation_gor           value="80"      sizeOfByte="2"/>
+   <orientation_ver           value="0"       sizeOfByte="1"/>
+   <numberInMagistral         value="1"       sizeOfByte="1"/>
+   <correctionX               value="0"       sizeOfByte="2"/>
+   <correctionY               value="1"       sizeOfByte="2"/>
+   <correctionZ               value="2"       sizeOfByte="2"/>
   </pr>
-  <pr sizeOfByte = "18">
-   <number                    value = "2"       sizeOfByte = "1"/>
-   <address                   value = "11"      sizeOfByte = "1"/>
-   <x                         value = "200"     sizeOfByte = "2"/>
-   <y                         value = "201"     sizeOfByte = "2"/>
-   <z                         value = "202"     sizeOfByte = "2"/>
-   <orientation_gor           value = "40"      sizeOfByte = "2"/>
-   <orientation_ver           value = "1"       sizeOfByte = "1"/>
-   <numberInMagistral         value = "2"       sizeOfByte = "1"/>
-   <correctionX               value = "10"      sizeOfByte = "2"/>
-   <correctionY               value = "11"      sizeOfByte = "2"/>
-   <correctionZ               value = "12"      sizeOfByte = "2"/>
+  <pr sizeOfByte="18">
+   <number                    value="2"       sizeOfByte="1"/>
+   <address                   value="11"      sizeOfByte="1"/>
+   <x                         value="200"     sizeOfByte="2"/>
+   <y                         value="201"     sizeOfByte="2"/>
+   <z                         value="202"     sizeOfByte="2"/>
+   <orientation_gor           value="40"      sizeOfByte="2"/>
+   <orientation_ver           value="1"       sizeOfByte="1"/>
+   <numberInMagistral         value="2"       sizeOfByte="1"/>
+   <correctionX               value="10"      sizeOfByte="2"/>
+   <correctionY               value="11"      sizeOfByte="2"/>
+   <correctionZ               value="12"      sizeOfByte="2"/>
   </pr>
  </pr_position>
 
- <bk16 id = "3" text = "Используемые входы и выходы БК16">
-  <io sizeOfByte = "6">
-   <address                   value = "1"        sizeOfByte = "1"/>
-   <number                    value = "1"        sizeOfByte = "1"/>
-   <function                  value = "1"        sizeOfByte = "1"/>
-   <number_pr_zatvor          value = "1"        sizeOfByte = "1"/>
-   <input_type                value = "2"        sizeOfByte = "1"/>
-   <number_sensor             value = "1"        sizeOfByte = "1"/>
+ <bk16 id="3" text="Используемые входы и выходы БК16">
+  <io sizeOfByte="6">
+   <address                   value="1"        sizeOfByte="1"/>
+   <number                    value="1"        sizeOfByte="1"/>
+   <function                  value="1"        sizeOfByte="1"/>
+   <number_pr_zatvor          value="1"        sizeOfByte="1"/>
+   <input_type                value="2"        sizeOfByte="1"/>
+   <number_sensor             value="1"        sizeOfByte="1"/>
   </io>
-  <io sizeOfByte = "6">
-   <address                   value = "1"        sizeOfByte = "1"/>
-   <number                    value = "2"        sizeOfByte = "1"/>
-   <function                  value = "2"        sizeOfByte = "1"/>
-   <number_pr_zatvor          value = "2"        sizeOfByte = "1"/>
-   <input_type                value = "1"        sizeOfByte = "1"/>
-   <number_sensor             value = "2"        sizeOfByte = "1"/>
+  <io sizeOfByte="6">
+   <address                   value="1"        sizeOfByte="1"/>
+   <number                    value="2"        sizeOfByte="1"/>
+   <function                  value="2"        sizeOfByte="1"/>
+   <number_pr_zatvor          value="2"        sizeOfByte="1"/>
+   <input_type                value="1"        sizeOfByte="1"/>
+   <number_sensor             value="2"        sizeOfByte="1"/>
   </io>
  </bk16>
  
- <serial_io id = "4" text = "Список сигналов извещателей принимаемых по последовательному каналу">
-  <io sizeOfByte = "3">
-   <state                     value = "0"        sizeOfByte = "1"/>
-   <number                    value = "1"        sizeOfByte = "1"/>
-   <code                      value = "2"        sizeOfByte = "1"/>
+ <serial_io id="4" text="Список сигналов извещателей принимаемых по последовательному каналу">
+  <io sizeOfByte="3">
+   <state                     value="0"        sizeOfByte="1"/>
+   <number                    value="1"        sizeOfByte="1"/>
+   <code                      value="2"        sizeOfByte="1"/>
   </io>
  </serial_io>
  
- <init_signal id = "5" text = "Список инициирующих сигналов">
-  <signal sizeOfByte = "5">
-   <number                    value = "1"        sizeOfByte = "2"/>
-   <input                     value = "1"        sizeOfByte = "1"/>
-   <input                     value = "2"        sizeOfByte = "1"/>
-   <input                     value = "0"        sizeOfByte = "1"/>
+ <init_signal id="5" text="Список инициирующих сигналов">
+  <signal sizeOfByte="5">
+   <number                    value="1"        sizeOfByte="2"/>
+   <input                     value="1"        sizeOfByte="1"/>
+   <input                     value="2"        sizeOfByte="1"/>
+   <input                     value="0"        sizeOfByte="1"/>
   </signal>
-  <signal sizeOfByte = "5">
-   <number                    value = "2"        sizeOfByte = "2"/>
-   <input                     value = "2"        sizeOfByte = "1"/>
-   <input                     value = "3"        sizeOfByte = "1"/>
-   <input                     value = "4"        sizeOfByte = "1"/>
+  <signal sizeOfByte="5">
+   <number                    value="2"        sizeOfByte="2"/>
+   <input                     value="2"        sizeOfByte="1"/>
+   <input                     value="3"        sizeOfByte="1"/>
+   <input                     value="4"        sizeOfByte="1"/>
   </signal>
  </init_signal>
 
- <pr_task id = "6" text = "Задания для ПР при поиске очага загорания и охлаждении">
-  <task sizeOfByte = "15">
-   <signal                    value = "1"        sizeOfByte = "2"/>
-   <pr                        value = "2"        sizeOfByte = "1"/>
-   <function                  value = "3"        sizeOfByte = "1"/>
-   <x1                        value = "4"        sizeOfByte = "2"/>
-   <x2                        value = "5"        sizeOfByte = "2"/>
-   <y1                        value = "6"        sizeOfByte = "2"/>
-   <y2                        value = "7"        sizeOfByte = "2"/>
-   <nas                       value = "8"        sizeOfByte = "2"/>
-   <trajectory_number         value = "9"        sizeOfByte = "1"/>
+ <pr_task id="6" text="Задания для ПР при поиске очага загорания и охлаждении">
+  <task sizeOfByte="15">
+   <signal                    value="1"        sizeOfByte="2"/>
+   <pr                        value="2"        sizeOfByte="1"/>
+   <function                  value="3"        sizeOfByte="1"/>
+   <x1                        value="4"        sizeOfByte="2"/>
+   <x2                        value="5"        sizeOfByte="2"/>
+   <y1                        value="6"        sizeOfByte="2"/>
+   <y2                        value="7"        sizeOfByte="2"/>
+   <nas                       value="8"        sizeOfByte="2"/>
+   <trajectory_number         value="9"        sizeOfByte="1"/>
   </task>
-  <task sizeOfByte = "15">
-   <signal                    value = "11"       sizeOfByte = "2"/>
-   <pr                        value = "12"       sizeOfByte = "1"/>
-   <function                  value = "13"       sizeOfByte = "1"/>
-   <x1                        value = "14"       sizeOfByte = "2"/>
-   <x2                        value = "15"       sizeOfByte = "2"/>
-   <y1                        value = "16"       sizeOfByte = "2"/>
-   <y2                        value = "17"       sizeOfByte = "2"/>
-   <nas                       value = "18"       sizeOfByte = "2"/>
-   <trajectory_number         value = "19"       sizeOfByte = "1"/>
+  <task sizeOfByte="15">
+   <signal                    value="11"       sizeOfByte="2"/>
+   <pr                        value="12"       sizeOfByte="1"/>
+   <function                  value="13"       sizeOfByte="1"/>
+   <x1                        value="14"       sizeOfByte="2"/>
+   <x2                        value="15"       sizeOfByte="2"/>
+   <y1                        value="16"       sizeOfByte="2"/>
+   <y2                        value="17"       sizeOfByte="2"/>
+   <nas                       value="18"       sizeOfByte="2"/>
+   <trajectory_number         value="19"       sizeOfByte="1"/>
   </task>
  </pr_task>
 
- <fv_300 id = "7" text = "Извещатели FV300">
-  <sensor sizeOfByte = "13">
-   <address                   value = "3"        sizeOfByte = "1"/>
-   <pr_number                 value = "4"        sizeOfByte = "1"/>
-   <sensor_number             value = "5"        sizeOfByte = "1"/>
-   <sensor_x                  value = "6"        sizeOfByte = "2"/>
-   <sensor_y                  value = "7"        sizeOfByte = "2"/>
-   <sensor_z                  value = "8"        sizeOfByte = "2"/>
-   <angel_gor                 value = "9"        sizeOfByte = "2"/>
-   <angel_ver                 value = "10"       sizeOfByte = "2"/>
+ <fv_300 id="7" text="Извещатели FV300">
+  <sensor sizeOfByte="13">
+   <address                   value="3"        sizeOfByte="1"/>
+   <pr_number                 value="4"        sizeOfByte="1"/>
+   <sensor_number             value="5"        sizeOfByte="1"/>
+   <sensor_x                  value="6"        sizeOfByte="2"/>
+   <sensor_y                  value="7"        sizeOfByte="2"/>
+   <sensor_z                  value="8"        sizeOfByte="2"/>
+   <angel_gor                 value="9"        sizeOfByte="2"/>
+   <angel_ver                 value="10"       sizeOfByte="2"/>
   </sensor>
-  <sensor sizeOfByte = "13">
-   <address                   value = "13"        sizeOfByte = "1"/>
-   <pr_number                 value = "14"        sizeOfByte = "1"/>
-   <sensor_number             value = "15"        sizeOfByte = "1"/>
-   <sensor_x                  value = "16"        sizeOfByte = "2"/>
-   <sensor_y                  value = "17"        sizeOfByte = "2"/>
-   <sensor_z                  value = "18"        sizeOfByte = "2"/>
-   <angel_gor                 value = "19"        sizeOfByte = "2"/>
-   <angel_ver                 value = "20"       sizeOfByte = "2"/>
+  <sensor sizeOfByte="13">
+   <address                   value="13"        sizeOfByte="1"/>
+   <pr_number                 value="14"        sizeOfByte="1"/>
+   <sensor_number             value="15"        sizeOfByte="1"/>
+   <sensor_x                  value="16"        sizeOfByte="2"/>
+   <sensor_y                  value="17"        sizeOfByte="2"/>
+   <sensor_z                  value="18"        sizeOfByte="2"/>
+   <angel_gor                 value="19"        sizeOfByte="2"/>
+   <angel_ver                 value="20"        sizeOfByte="2"/>
   </sensor>
- </serial_io>
+ </fv_300>
 
- <trajectory id = "8" text = "Траектории">
-  <point sizeOfByte = "12">
-   <pr_number                 value = "14"        sizeOfByte = "1"/>
-   <trajectory_number         value = "16"        sizeOfByte = "1"/>
-   <point_number              value = "17"        sizeOfByte = "2"/>
-   <angel_gor                 value = "18"        sizeOfByte = "2"/>
-   <angel_ver                 value = "19"        sizeOfByte = "2"/>
-   <nasadok                   value = "20"        sizeOfByte = "2"/>
-   <num_pressure_correction   value = "21"        sizeOfByte = "2"/>
+ <trajectory id="8" text="Траектории">
+  <point sizeOfByte="12">
+   <pr_number                 value="14"        sizeOfByte="1"/>
+   <trajectory_number         value="16"        sizeOfByte="1"/>
+   <point_number              value="17"        sizeOfByte="2"/>
+   <angel_gor                 value="18"        sizeOfByte="2"/>
+   <angel_ver                 value="19"        sizeOfByte="2"/>
+   <nasadok                   value="20"        sizeOfByte="2"/>
+   <num_pressure_correction   value="21"        sizeOfByte="2"/>
   </point>
-  <point sizeOfByte = "12">
-   <pr_number                 value = "24"        sizeOfByte = "1"/>
-   <trajectory_number         value = "26"        sizeOfByte = "1"/>
-   <point_number              value = "27"        sizeOfByte = "2"/>
-   <angel_gor                 value = "28"        sizeOfByte = "2"/>
-   <angel_ver                 value = "29"        sizeOfByte = "2"/>
-   <nasadok                   value = "30"        sizeOfByte = "2"/>
-   <num_pressure_correction   value = "31"        sizeOfByte = "2"/>
+  <point sizeOfByte="12">
+   <pr_number                 value="24"        sizeOfByte="1"/>
+   <trajectory_number         value="26"        sizeOfByte="1"/>
+   <point_number              value="27"        sizeOfByte="2"/>
+   <angel_gor                 value="28"        sizeOfByte="2"/>
+   <angel_ver                 value="29"        sizeOfByte="2"/>
+   <nasadok                   value="30"        sizeOfByte="2"/>
+   <num_pressure_correction   value="31"        sizeOfByte="2"/>
   </point>
  </trajectory>
 
- <pressure_angel_correction id = "9" text = "Коррекция угла от давления">
-  <item sizeOfByte = "5">
-   <pr_number                 value = "34"        sizeOfByte = "1"/>
-   <array_number              value = "36"        sizeOfByte = "2"/>
-   <pressure                  value = "37"        sizeOfByte = "1"/>
-   <angel                     value = "38"        sizeOfByte = "1"/>
+ <pressure_angel_correction id="9" text="Коррекция угла от давления">
+  <item sizeOfByte="5">
+   <pr_number                 value="34"        sizeOfByte="1"/>
+   <array_number              value="36"        sizeOfByte="2"/>
+   <pressure                  value="37"        sizeOfByte="1"/>
+   <angel                     value="38"        sizeOfByte="1"/>
   </item>
-  <item sizeOfByte = "5">
-   <pr_number                 value = "44"        sizeOfByte = "1"/>
-   <array_number              value = "46"        sizeOfByte = "2"/>
-   <pressure                  value = "47"        sizeOfByte = "1"/>
-   <angel                     value = "48"        sizeOfByte = "1"/>
+  <item sizeOfByte="5">
+   <pr_number                 value="44"        sizeOfByte="1"/>
+   <array_number              value="46"        sizeOfByte="2"/>
+   <pressure                  value="47"        sizeOfByte="1"/>
+   <angel                     value="48"        sizeOfByte="1"/>
   </item>
  </pressure_angel_correction>
 

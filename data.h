@@ -4,39 +4,80 @@
 #include "config.h"
 #include "xmlExceptions.h"
 #include "serial.h"
-
-struct ConfigDataStructConst
-{
-	unsigned char maxPR;
-	unsigned char timeOutBeforeStart;
-	unsigned char timeOutBeforeFinish;
-	unsigned char numberFireToAnalize;
-	unsigned char minimumDistanceForCompactJet;
-	unsigned char permissionTesting;
-	unsigned char testingHour;
-	unsigned char testingMinute;
-	unsigned char permissionTestingInfo;
-	unsigned char timeControlUserAction;
-	unsigned short zoneX;
-	unsigned short zoneY;
-	unsigned short zoneZ;
-	unsigned short tvAdapter;
-	unsigned short pcAdapter;
-	unsigned char topField;
-	unsigned char bottomField;
-	unsigned char leftField;
-	unsigned char rightField;
-	unsigned char timeReturnFromRemoteMode;
-	unsigned char permissionRemoteWithSearch;
-}
+#include <string>
 
 class Data{
 private:
+	static unsigned char* pBuffer;
+	static XmlElement* configElement;
+	static unsigned int dataSize;
+	static unsigned int blockCount;
 
+	static bool getDataSize(){
+		for (unsigned int i = 0; i < blockCount; ++i){
+			XmlElement* blockElem = configElement->getElement(i);
+			dataSize += 6;
+			for (unsigned int j = 0; j < blockElem->getElementCount(); ++j){
+				XmlElement* elem = blockElem->getElement(j);
+				if (elem->isAttributeExists("sizeOfByte"))
+					dataSize += atoi(elem->getAttributeValue("sizeOfByte").c_str());
+				else{
+					std::cout << "ne zadan atribute 'sizeOfByte' u elementa " << elem->getName() << std::endl;
+					return false;
+				}
+			}
+		}
+
+		dataSize += 8;
+		std::cout << "dataSize = " << dataSize << std::endl;
+		return true;
+	}
 
 public:
-	bool init();
-	bool send();
+	static bool init(){
+		configElement = Config::getElement("config");
+		if (configElement == nullptr){
+			std::cout << "element 'config' ne nayden" << std::endl;
+			return false;
+		}
+
+		blockCount = configElement->getElementCount();
+		std::cout << "elementCount = " << blockCount << std::endl;
+
+		if (!getDataSize())
+			return false;
+
+		pBuffer = new unsigned char[dataSize];
+		memset(pBuffer, 0, dataSize);
+
+		unsigned char* _pBuffer = pBuffer;
+		*(reinterpret_cast<unsigned int*>(pBuffer)) = dataSize;
+		pBuffer += sizeof(unsigned int);
+
+		for (unsigned int i = 0; i < blockCount; ++i){
+			XmlElement* blockElem = configElement->getElement(i);
+			*(reinterpret_cast<unsigned short*>(pBuffer)) = atoi(blockElem->getAttributeValue("id").c_str());
+			pBuffer += sizeof(unsigned short);
+
+			продолжить
+
+
+			for (unsigned int j = 0; j < blockElem->getElementCount(); ++j){
+				XmlElement* elem = blockElem->getElement(j);
+				dataSize += atoi(elem->getAttributeValue("sizeOfByte").c_str());
+			}
+		}
+
+	}
+
+	static bool send(){
+
+	}
 };
+
+unsigned char* Data::pBuffer = nullptr;
+XmlElement* Data::configElement = nullptr;
+unsigned int Data::dataSize = 0;
+unsigned int Data::blockCount = 0;
 
 #endif

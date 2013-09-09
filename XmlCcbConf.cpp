@@ -8,6 +8,7 @@
 #include "config.h"
 #include "xmlExceptions.h"
 #include "serial.h"
+#include "data.h"
 
 using namespace std;
 
@@ -44,6 +45,9 @@ int main(int argc, char* argv[])
 		std::cout << "imya com porta ne ukazano" << std::endl;
 		return 0;
 	}
+
+	Data::init();
+	return 0;
 
 	std::string comPortName;
 	if (comPortElement->isAttributeExists("name"))
