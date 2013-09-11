@@ -46,9 +46,6 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 
-	Data::init();
-	return 0;
-
 	std::string comPortName;
 	if (comPortElement->isAttributeExists("name"))
 		comPortName = comPortElement->getAttributeValue("name");
@@ -62,7 +59,10 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 
+	Data::init();
+	Data::send();
 
+	std::cout << "Update completed." << std::endl;
 
 	return 1;
 }

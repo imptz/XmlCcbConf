@@ -4,6 +4,7 @@
 #include "config.h"
 #include "xmlExceptions.h"
 #include "serial.h"
+#include "crc32.h"
 #include <string>
 
 class Data{
@@ -19,16 +20,15 @@ private:
 			dataSize += 6;
 			for (unsigned int j = 0; j < blockElem->getElementCount(); ++j){
 				XmlElement* elem = blockElem->getElement(j);
-				if (elem->isAttributeExists("sizeOfByte"))
-					dataSize += atoi(elem->getAttributeValue("sizeOfByte").c_str());
+				if (elem->isAttributeExists("sizeInBytes"))
+					dataSize += atoi(elem->getAttributeValue("sizeInBytes").c_str());
 				else{
-					std::cout << "ne zadan atribute 'sizeOfByte' u elementa " << elem->getName() << std::endl;
+					std::cout << "ne zadan atribute 'sizeInBytes' u elementa " << elem->getName() << std::endl;
 					return false;
 				}
 			}
 		}
 
-		dataSize += 8;
 		std::cout << "dataSize = " << dataSize << std::endl;
 		return true;
 	}
@@ -47,31 +47,59 @@ public:
 		if (!getDataSize())
 			return false;
 
-		pBuffer = new unsigned char[dataSize];
-		memset(pBuffer, 0, dataSize);
+		pBuffer = new unsigned char[dataSize + 8];
+		memset(pBuffer, 0, dataSize + 8);
 
 		unsigned char* _pBuffer = pBuffer;
-		*(reinterpret_cast<unsigned int*>(pBuffer)) = dataSize;
-		pBuffer += sizeof(unsigned int);
+		*(reinterpret_cast<unsigned int*>(_pBuffer)) = dataSize;
+		_pBuffer += sizeof(unsigned int);
 
 		for (unsigned int i = 0; i < blockCount; ++i){
 			XmlElement* blockElem = configElement->getElement(i);
-			*(reinterpret_cast<unsigned short*>(pBuffer)) = atoi(blockElem->getAttributeValue("id").c_str());
-			pBuffer += sizeof(unsigned short);
-
-			продолжить
-
+			*(reinterpret_cast<unsigned short*>(_pBuffer)) = atoi(blockElem->getAttributeValue("id").c_str());
+			_pBuffer += sizeof(unsigned short);
+			unsigned char* pBlockSize = _pBuffer;
+			_pBuffer += sizeof(unsigned int);
+			unsigned int blockSize = 0;
 
 			for (unsigned int j = 0; j < blockElem->getElementCount(); ++j){
 				XmlElement* elem = blockElem->getElement(j);
-				dataSize += atoi(elem->getAttributeValue("sizeOfByte").c_str());
+				unsigned int itemSize = atoi(elem->getAttributeValue("sizeInBytes").c_str());
+				blockSize += itemSize;
+
+				for (unsigned int k = 0; k < elem->getElementCount(); ++k){
+					XmlElement* itemElem = elem->getElement(k);
+					unsigned int itemSize = atoi(itemElem->getAttributeValue("sizeInBytes").c_str());
+					unsigned int value = atoi(itemElem->getAttributeValue("value").c_str());
+
+					switch (itemSize){
+						case 1:
+							*reinterpret_cast<unsigned char*>(_pBuffer) = value;
+							_pBuffer += 1;
+							break;
+						case 2:
+							*reinterpret_cast<unsigned char*>(_pBuffer) = value;
+							_pBuffer += 1;
+							*reinterpret_cast<unsigned char*>(_pBuffer) = value >> 8;
+							_pBuffer += 1;
+							break;
+						default:
+							std::cout << __FUNCTION__ << " itemSize unknown = " << itemSize << " block = " << blockElem->getName() << " itemIndex = " << k << std::endl;
+							return false;
+							break;
+					}
+				}
 			}
+			*reinterpret_cast<unsigned int*>(pBlockSize) = blockSize;
 		}
 
+		unsigned int crc = calcCRC32(pBuffer + 4, dataSize);
+		*reinterpret_cast<unsigned int*>((pBuffer + sizeof(unsigned int) + dataSize)) = crc;
+		return true;
 	}
 
-	static bool send(){
-
+	static void send(){
+		Serial::send(pBuffer, dataSize + 8);
 	}
 };
 

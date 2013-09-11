@@ -118,21 +118,7 @@ unsigned int Serial::recv(){
 	return 0;
 }
 
-void Serial::send(unsigned int size){
-	//DWORD nWrite = 0;
-	//unsigned int length = buffer[4] * 256 + buffer[3];
-	//unsigned short crc = calcCRC16(buffer, length + 5);
-	//buffer[length + 5] = crc;
-	//buffer[length + 6] = crc >> 8;
-	//WriteFile(hCom,buffer,length + 7,&nWrite,NULL);
-
-	//if (Debug::BUS_OUT_DEBUG_OUT){
-	//	if ((Debug::BUS_DEVICE_NUMBER == -1) || (buffer[1] == pUsoDeviceManager->devices[Debug::BUS_DEVICE_NUMBER]->getAddress())){
-	//		char sstr[800];
-	//		std::cout << "send: ";
-	//		for (int i = 0; i < nWrite; i++)
-	//			std::cout << _itoa(buffer[i], sstr, 16) << " ";
-	//		std::cout << std::endl;
-	//	}
-	//}
+void Serial::send(unsigned char* pBuffer, unsigned int size){
+	DWORD nWrite = 0;
+	WriteFile(hCom, pBuffer, size, &nWrite, NULL);
 }

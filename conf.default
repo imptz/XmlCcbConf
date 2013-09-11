@@ -76,6 +76,11 @@
  </bk16>
  
  <serial_io id="4" text="Список сигналов извещателей принимаемых по последовательному каналу">
+  <io sizeInBytes="3">
+   <state                     value="0"        sizeInBytes="1"/>
+   <number                    value="1"        sizeInBytes="1"/>
+   <code                      value="2"        sizeInBytes="1"/>
+  </io>
  </serial_io>
  
  <init_signal id="5" text="Список инициирующих сигналов">
@@ -119,12 +124,62 @@
  </pr_task>
 
  <fv_300 id="7" text="Извещатели FV300">
+  <sensor sizeInBytes="13">
+   <address                   value="3"        sizeInBytes="1"/>
+   <pr_number                 value="4"        sizeInBytes="1"/>
+   <sensor_number             value="5"        sizeInBytes="1"/>
+   <sensor_x                  value="6"        sizeInBytes="2"/>
+   <sensor_y                  value="7"        sizeInBytes="2"/>
+   <sensor_z                  value="8"        sizeInBytes="2"/>
+   <angel_gor                 value="9"        sizeInBytes="2"/>
+   <angel_ver                 value="10"       sizeInBytes="2"/>
+  </sensor>
+  <sensor sizeInBytes="13">
+   <address                   value="13"        sizeInBytes="1"/>
+   <pr_number                 value="14"        sizeInBytes="1"/>
+   <sensor_number             value="15"        sizeInBytes="1"/>
+   <sensor_x                  value="16"        sizeInBytes="2"/>
+   <sensor_y                  value="17"        sizeInBytes="2"/>
+   <sensor_z                  value="18"        sizeInBytes="2"/>
+   <angel_gor                 value="19"        sizeInBytes="2"/>
+   <angel_ver                 value="20"        sizeInBytes="2"/>
+  </sensor>
  </fv_300>
 
  <trajectory id="8" text="Траектории">
+  <point sizeInBytes="12">
+   <pr_number                 value="14"        sizeInBytes="1"/>
+   <trajectory_number         value="16"        sizeInBytes="1"/>
+   <point_number              value="17"        sizeInBytes="2"/>
+   <angel_gor                 value="18"        sizeInBytes="2"/>
+   <angel_ver                 value="19"        sizeInBytes="2"/>
+   <nasadok                   value="20"        sizeInBytes="2"/>
+   <num_pressure_correction   value="21"        sizeInBytes="2"/>
+  </point>
+  <point sizeInBytes="12">
+   <pr_number                 value="24"        sizeInBytes="1"/>
+   <trajectory_number         value="26"        sizeInBytes="1"/>
+   <point_number              value="27"        sizeInBytes="2"/>
+   <angel_gor                 value="28"        sizeInBytes="2"/>
+   <angel_ver                 value="29"        sizeInBytes="2"/>
+   <nasadok                   value="30"        sizeInBytes="2"/>
+   <num_pressure_correction   value="31"        sizeInBytes="2"/>
+  </point>
  </trajectory>
 
  <pressure_angel_correction id="9" text="Коррекция угла от давления">
+  <item sizeInBytes="5">
+   <pr_number                 value="34"        sizeInBytes="1"/>
+   <array_number              value="36"        sizeInBytes="2"/>
+   <pressure                  value="37"        sizeInBytes="1"/>
+   <angel                     value="38"        sizeInBytes="1"/>
+  </item>
+  <item sizeInBytes="5">
+   <pr_number                 value="44"        sizeInBytes="1"/>
+   <array_number              value="46"        sizeInBytes="2"/>
+   <pressure                  value="47"        sizeInBytes="1"/>
+   <angel                     value="48"        sizeInBytes="1"/>
+  </item>
  </pressure_angel_correction>
 
 </config>

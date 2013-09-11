@@ -14,7 +14,7 @@ public:
 	static bool serialConnect(const char* serialName, unsigned int year, unsigned int version);
 	static void serialDisconnect();
 	static unsigned int recv();
-	static void send(unsigned int size);
+	static void send(unsigned char* pBuffer, unsigned int size);
 };
 
 #endif
